@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS STUDENT;
-CREATE TABLE STUDENT (
+CREATE TABLE IF NOT EXISTS STUDENT (
                          student_id INT AUTO_INCREMENT  PRIMARY KEY,
                          first_name VARCHAR(255),
                          last_name VARCHAR(255),
@@ -13,8 +12,7 @@ CREATE TABLE STUDENT (
                          last_registration_date DATE
 );
 
-DROP TABLE IF EXISTS PROFESSOR;
-CREATE TABLE PROFESSOR (
+CREATE TABLE IF NOT EXISTS PROFESSOR (
                            professor_id INT AUTO_INCREMENT  PRIMARY KEY,
                            first_name VARCHAR(255),
                            last_name VARCHAR(255),
@@ -22,8 +20,7 @@ CREATE TABLE PROFESSOR (
                            department VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS COURSE;
-CREATE TABLE COURSE (
+CREATE TABLE IF NOT EXISTS COURSE (
                         course_id INT AUTO_INCREMENT PRIMARY KEY,
                         name VARCHAR(255),
                         course_number INT,
@@ -31,8 +28,7 @@ CREATE TABLE COURSE (
                         description TEXT
 );
 
-DROP TABLE IF EXISTS COURSE_OFFERING;
-CREATE TABLE COURSE_OFFERING (
+CREATE TABLE IF NOT EXISTS COURSE_OFFERING (
                                  offering_id INT AUTO_INCREMENT PRIMARY KEY,
                                  course_id INT,
                                  professor_id INT,
@@ -42,8 +38,8 @@ CREATE TABLE COURSE_OFFERING (
 
 );
 
-DROP TABLE IF EXISTS REGISTRATION;
-CREATE TABLE REGISTRATION (
+
+CREATE TABLE IF NOT EXISTS REGISTRATION (
                               registration_id INT AUTO_INCREMENT PRIMARY KEY,
                               student_id INT,
                               offering_id INT,

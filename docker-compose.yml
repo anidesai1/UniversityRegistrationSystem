@@ -1,0 +1,16 @@
+version: '3.8'
+
+networks:
+  default:
+
+services:
+  db:
+    image: mysql:8.0.36
+    container_name: university_registration_system_container
+    ports:
+      - 3307:3306
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: some_pass
+      MYSQL_DATABASE: university_registration_system
